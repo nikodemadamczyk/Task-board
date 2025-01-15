@@ -1,0 +1,54 @@
+[2025-01-10 12:26:13] [INFO] Store method called
+Data: Array
+(
+    [POST] => Array
+        (
+        )
+
+    [URL] => https://team18.wi1cm.uni-trier.de/tasks/store
+)
+
+--------------------------------------------------------------------------------
+[2025-01-10 12:26:13] [ERROR] Invalid request method
+Data: Array
+(
+    [method] => GET
+)
+
+--------------------------------------------------------------------------------
+[2025-01-10 12:29:12] [INFO] Store method called
+Data: Array
+(
+    [POST] => Array
+        (
+        )
+
+    [URL] => https://team18.wi1cm.uni-trier.de/tasks/store
+)
+
+--------------------------------------------------------------------------------
+[2025-01-10 12:29:12] [ERROR] Invalid request method
+Data: Array
+(
+    [method] => GET
+)
+
+--------------------------------------------------------------------------------
+[2025-01-10 12:36:07] [INFO] Store method called
+Data: Array
+(
+    [POST] => Array
+        (
+        )
+
+    [URL] => https://team18.wi1cm.uni-trier.de/tasks/store
+)
+
+--------------------------------------------------------------------------------
+[2025-01-10 12:36:07] [ERROR] Invalid request method
+Data: Array
+(
+    [method] => GET
+)
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,93 @@
+/* Navigation styles */
+.custom-nav {
+    background-color: #002060;
+    padding: 1rem 5rem;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-link {
+    color: white !important;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler {
+    border-color: #ffffff;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        margin-right: auto;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .navbar-toggler-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Footer styles */
+.custom-footer {
+    background-color: #002060;
+    bottom: 0;
+    width: 100%;
+    padding: 0.25rem 0;
+    position: relative;
+}
+
+.custom-footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.custom-footer a:hover {
+    text-decoration: underline;
+}
+
+/* General layout */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-container {
+    margin-bottom: 40px;
+}
+
+
+/* Card styles */
+.card {
+    margin-top: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.card-title {
+    margin-bottom: 0;
+    color: #002060;
+}

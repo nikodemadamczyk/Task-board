@@ -1,0 +1,10 @@
+/vendor/
+/node_modules/
+*.log
+*.env
+*.cache
+*.bak
+*.swp
+.idea/
+/.DS_Store
+*.tmp
