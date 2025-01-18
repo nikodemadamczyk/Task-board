@@ -89,6 +89,7 @@ class TaskModel extends Model
     }
 
 
+
     public function deleteTask($taskId)
     {
         return $this->update($taskId, ['geloescht' => 1]);

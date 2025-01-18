@@ -13,7 +13,7 @@ class Tasks extends BaseController
         $this->taskModel = new TaskModel();
     }
 
-    
+
     public function getindex()
 
     {
@@ -30,8 +30,8 @@ class Tasks extends BaseController
         echo view('pages/tasks', $data);
         echo view('templates/footer');
     }
-    
-    
+
+
     public function getcreate()
     {
         echo view('templates/header');
@@ -57,6 +57,17 @@ class Tasks extends BaseController
 
     public function postupdate($id)
     {
+        if (!$this->validate('tasks')) {
+            $data['task'] = $this->taskModel->getTaskById($id);
+            return view('templates/header')
+                . view('templates/navigation')
+                . view('pages/formseite', [
+                    'validation' => $this->validator,
+                    'task' => $data['task']
+                ])
+                . view('templates/footer');
+        }
+
         try {
             $data = [
                 'personen_id' => (int)$this->request->getPost('personen_id'),
@@ -83,21 +94,17 @@ class Tasks extends BaseController
                 ->withInput();
         }
     }
-    // public function getStore()
-    // {
-    //     return redirect()->to('tasks/create');
-    // }
 
-    public function postStore()
+    public function poststore()
     {
-        
-//        echo('<pre>');
-//        var_dump($_POST);
-//        echo('</pre>');
-//        die();
-        
-        try {
+        if (!$this->validate('tasks')) {
+            return view('templates/header')
+                . view('templates/navigation')
+                . view('pages/formseite', ['validation' => $this->validator])
+                . view('templates/footer');
+        }
 
+        try {
             $data = [
                 'personen_id' => (int)$this->request->getPost('personen_id'),
                 'taskarten_id' => (int)$this->request->getPost('taskarten_id'),
@@ -108,15 +115,12 @@ class Tasks extends BaseController
                 'notizen' => $this->request->getPost('notizen')
             ];
 
-            $result = $this->taskModel->createTask($data);
-
-            if ($result) {
+            if ($this->taskModel->createTask($data)) {
                 return redirect()->to(base_url('tasks'))
                     ->with('success', 'Task wurde erfolgreich erstellt');
             } else {
                 throw new \RuntimeException('Failed to create task');
             }
-
         } catch (\Exception $e) {
             return redirect()->back()
                 ->with('error', 'Fehler beim Erstellen des Tasks: ' . $e->getMessage())
@@ -125,9 +129,14 @@ class Tasks extends BaseController
     }
 
 
-    public function delete($id)
+    public function getdelete($id)
     {
-        $this->taskModel->deleteTask($id);
-        return redirect()->to(base_url('tasks'));
+        if ($this->taskModel->deleteTask($id)) {
+            return redirect()->to(base_url('tasks'))
+                ->with('success', 'Task wurde erfolgreich gelöscht');
+        } else {
+            return redirect()->back()
+                ->with('error', 'Fehler beim Löschen des Tasks');
+        }
     }
 }

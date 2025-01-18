@@ -20,10 +20,10 @@
                     <a class="nav-link text-white" href="<?= base_url('public') ?>">Tasks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?= base_url('table') ?>">Boards</a>
+                    <a class="nav-link text-white" href="<?= base_url('pages/tasks') ?>">Boards</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?= base_url('formte') ?>">Spalten</a>
+                    <a class="nav-link text-white" href="<?= base_url('spalten') ?>">Spalten</a>
                 </li>
             </ul>
         </div>

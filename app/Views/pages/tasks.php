@@ -46,7 +46,7 @@
                                                            class="btn btn-outline-primary btn-sm me-2">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                        <a href="<?= base_url('delete-task/' . $task['tasks_id']) ?>"
+                                                        <a href="<?= base_url('tasks/delete/' . $task['tasks_id']) ?>"
                                                            class="btn btn-outline-danger btn-sm"
                                                            onclick="return confirm('Bist du sicher?');">
                                                             <i class="fas fa-trash-alt"></i>
@@ -98,7 +98,7 @@
                                                            class="btn btn-outline-primary btn-sm me-2">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                        <a href="<?= base_url('delete-task/' . $task['tasks_id']) ?>"
+                                                        <a href="<?= base_url('tasks/delete/' . $task['tasks_id']) ?>"
                                                            class="btn btn-outline-danger btn-sm"
                                                            onclick="return confirm('Bist du sicher?');">
                                                             <i class="fas fa-trash-alt"></i>
@@ -150,7 +150,7 @@
                                                            class="btn btn-outline-primary btn-sm me-2">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                        <a href="<?= base_url('delete-task/' . $task['tasks_id']) ?>"
+                                                        <a href="<?= base_url('tasks/delete/' . $task['tasks_id']) ?>"
                                                            class="btn btn-outline-danger btn-sm"
                                                            onclick="return confirm('Bist du sicher?');">
                                                             <i class="fas fa-trash-alt"></i>
@@ -202,7 +202,7 @@
                                                            class="btn btn-outline-primary btn-sm me-2">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                        <a href="<?= base_url('delete-task/' . $task['tasks_id']) ?>"
+                                                        <a href="<?= base_url('tasks/delete/' . $task['tasks_id']) ?>"
                                                            class="btn btn-outline-danger btn-sm"
                                                            onclick="return confirm('Bist du sicher?');">
                                                             <i class="fas fa-trash-alt"></i>

@@ -66,7 +66,9 @@
                                class="form-control"
                                id="erinnerungsdatum"
                                name="erinnerungsdatum"
-                               value="<?= isset($task) && $task['erinnerungsdatum'] ? date('Y-m-d\TH:i', strtotime($task['erinnerungsdatum'])) : old('erinnerungsdatum') ?>">
+                               value="<?= isset($task) && $task['erinnerungsdatum']
+                                   ? date('Y-m-d\TH:i', strtotime($task['erinnerungsdatum']))
+                                   : (old('erinnerungsdatum') ?: date('Y-m-d\TH:i')) ?>">
                     </div>
                 </div>
 
