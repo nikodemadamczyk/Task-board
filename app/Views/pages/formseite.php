@@ -4,7 +4,7 @@
             <h5 class="card-title mb-0"><?= isset($task) ? 'Task bearbeiten' : 'Task erstellen' ?></h5>
         </div>
         <div class="card-body">
-            <form action="<?= isset($task) ? base_url('tasks/update/' . $task['tasks_id']) : base_url('Tasks/store') ?>" method="post">
+            <form action="<?= isset($task['tasks_id']) ? base_url('tasks/submit/' . $task['tasks_id']) : base_url('tasks/store') ?>" method="post">
                 <!-- Task-Bezeichnung -->
                 <div class="row mb-3">
                     <label for="tasks" class="col-sm-2 col-form-label">Task-Bezeichnung</label>
@@ -111,3 +111,4 @@
         </div>
     </div>
 </div>
+

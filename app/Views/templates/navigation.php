@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?= base_url('public') ?>">Tasks</a>
+                    <a class="nav-link text-white" href="<?= base_url('tasks') ?>">Tasks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?= base_url('pages/tasks') ?>">Boards</a>
+                    <a class="nav-link text-white" href="<?= base_url('tasks') ?>">Boards</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="<?= base_url('spalten') ?>">Spalten</a>

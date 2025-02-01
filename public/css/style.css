@@ -79,6 +79,7 @@ body {
 /* Card styles */
 .card {
     margin-top: 2rem;
+    margin-bottom: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -91,3 +92,38 @@ body {
     margin-bottom: 0;
     color: #002060;
 }
+
+/* Task board specific styles */
+.task-board {
+    min-height: calc(100vh - 160px);
+}
+
+.card-header {
+    background-color: white !important;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.task-card {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.badge.rounded-circle {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overflow-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+/* Search box styles */
+.search-box {
+    max-width: 300px;
+    border-radius: 4px;
+}
+

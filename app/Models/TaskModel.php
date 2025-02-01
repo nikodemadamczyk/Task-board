@@ -25,18 +25,18 @@ class TaskModel extends Model
 
     public function getTasks()
     {
-        return $this->db->table('tasks')
+        $tasks = $this->db->table('tasks')
             ->select('
-                tasks.*, 
-                personen.vorname, 
-                personen.name, 
-                taskarten.taskart, 
-                taskarten.taskartenicon,
-                spalten.spalte,
-                spalten.spaltenbeschreibung,
-                spalten.boards_id,
-                spalten.sort_id
-            ')
+            tasks.*, 
+            personen.vorname, 
+            personen.name, 
+            taskarten.taskart, 
+            taskarten.taskartenicon,
+            spalten.spalte,
+            spalten.spaltenbeschreibung,
+            spalten.boards_id,
+            spalten.sort_id
+        ')
             ->join('personen', 'personen.personen_id = tasks.personen_id')
             ->join('taskarten', 'taskarten.taskarten_id = tasks.taskarten_id')
             ->join('spalten', 'spalten.spalten_id = tasks.spalten_id')
@@ -45,6 +45,17 @@ class TaskModel extends Model
             ->orderBy('tasks.tasks', 'ASC')
             ->get()
             ->getResultArray();
+
+        // Modyfikujemy wyniki, aby uwzględnić status erledigt
+        $modifiedTasks = array_map(function($task) {
+            // Jeśli zadanie jest zakończone, zmieniamy jego "spalte" na "Erledigt"
+            if ($task['erledigt'] == 1) {
+                $task['spalte'] = 'Erledigt';
+            }
+            return $task;
+        }, $tasks);
+
+        return $modifiedTasks;
     }
 
     public function getTaskById($taskId)
