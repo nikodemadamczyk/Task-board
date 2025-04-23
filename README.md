@@ -1,68 +1,92 @@
-# CodeIgniter 4 Application Starter
+# CodeIgniter Task Management System
 
-## What is CodeIgniter?
+A comprehensive task management system built with CodeIgniter 4, featuring a Kanban-style board interface with draggable task cards, user assignment, task categories, and status tracking.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Contributors
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- Nikodem Adamczyk - Web Development Course 2024 in University in Trier
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Features
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- **Kanban Board Layout**
+  - Visualize tasks across multiple columns (Zu Besprechende, Offen, In Bearbeitung, Erledigt)
+  - Clearly see task progression through your workflow
 
-## Installation & updates
+- **Task Management**
+  - Create, edit, copy, and delete tasks
+  - Mark tasks as complete/incomplete
+  - Add task descriptions and notes
+  - Set reminders for important deadlines
+  - Assign tasks to team members
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- **Board Organization**
+  - Multiple team boards 
+  - Customizable columns
+  - Task filtering and search
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+- **Responsive Design**
+  - Works on desktop and mobile devices
+  - Clean, intuitive interface using Bootstrap 5
 
-## Setup
+## Tech Stack
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+- **Backend**: CodeIgniter 4 PHP Framework
+- **Database**: MySQL 
+- **Frontend**: 
+  - HTML5, CSS3, JavaScript
+  - Bootstrap 5
+  - Font Awesome 5
+  - jQuery
 
-## Important Change with index.php
+## Project Structure
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+The application follows the standard CodeIgniter 4 MVC architecture:
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- **Models**:
+  - `TaskModel.php` - Task data management
+  - `SpaltenModel.php` - Column management
+  - `PersonModel.php` - User/Person data
 
-**Please** read the user guide for a better explanation of how CI4 works!
+- **Controllers**:
+  - `Tasks.php` - Task operations
+  - `Spalten.php` - Column operations
+  - `Home.php` - Dashboard and main views
 
-## Repository Management
+- **Views**:
+  - `/pages/` - Main content pages
+  - `/templates/` - Reusable template files
+  - `/pages/tasks.php` - Kanban board view
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## Usage
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+### Task Management
 
-## Server Requirements
+- **Create a Task**: Click "+ Neu" button in any column
+- **Edit a Task**: Click the menu icon on any task and select "Task bearbeiten"
+- **Mark as Complete**: Use the dropdown menu to mark tasks as complete/incomplete
+- **Copy a Task**: Select "Task kopieren" from the dropdown menu
+- **Delete a Task**: Select "Task löschen" from the dropdown menu
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+### Column Management
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- **View Columns**: Navigate to "Spalten" in the navigation menu
+- **Create a Column**: Click "Erstellen" on the columns page
+- **Edit a Column**: Click the edit icon next to any column
+- **Delete a Column**: Click the delete icon next to any column
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+## Development
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+This project is built with CodeIgniter 4. If you're new to the framework, the [CodeIgniter 4 User Guide](https://codeigniter.com/user_guide/intro/index.html) is a great resource.
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+### Key Files for Development
+
+- `app/Config/Routes.php` - Define application routes
+- `app/Controllers/` - Application controllers
+- `app/Models/` - Data models
+- `app/Views/` - View templates
+- `public/css/style.css` - Custom CSS styles
+
+## License
+
+(Add appropriate license information here)
+
