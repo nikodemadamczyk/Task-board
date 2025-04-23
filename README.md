@@ -86,7 +86,4 @@ This project is built with CodeIgniter 4. If you're new to the framework, the [C
 - `app/Views/` - View templates
 - `public/css/style.css` - Custom CSS styles
 
-## License
-
-(Add appropriate license information here)
 
